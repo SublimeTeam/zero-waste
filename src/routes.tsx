@@ -4,14 +4,19 @@ import { SignUp } from "./pages/sign-up";
 
 import personalRoutes from "./pages/personal/routes";
 
-export const routes = createBrowserRouter([
-  personalRoutes,
+export const routes = createBrowserRouter(
+  [
+    personalRoutes,
+    {
+      path: "sign-in",
+      element: <SignIn />,
+    },
+    {
+      path: "sign-up",
+      element: <SignUp />,
+    },
+  ],
   {
-    path: "sign-in",
-    element: <SignIn />,
-  },
-  {
-    path: "sign-up",
-    element: <SignUp />,
-  },
-]);
+    basename: "/zero-waste/",
+  }
+);

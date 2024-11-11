@@ -8,10 +8,12 @@ import { Badge } from "@/components/ui/badge";
 import { stores } from "../data";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { Categories } from "@/components/categories";
+import { useUserContext } from "@/hooks/useUserContext";
 
 export const Discover = () => {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
+  const { logout } = useUserContext();
 
   const activeCategory = searchParams.get("category");
 
@@ -68,7 +70,7 @@ export const Discover = () => {
             size="sm"
             variant="ghost"
             className="text-red-500 gap-2"
-            onClick={() => navigate("/sign-in")}
+            onClick={() => logout()}
           >
             <LogOut size="16" /> Sair
           </Button>
