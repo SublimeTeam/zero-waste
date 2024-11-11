@@ -6,12 +6,11 @@ import { LogOut, Star } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { stores } from "../data";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Categories } from "@/components/categories";
 import { useUserContext } from "@/hooks/useUserContext";
 
 export const Discover = () => {
-  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const { logout } = useUserContext();
 
